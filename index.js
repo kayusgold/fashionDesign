@@ -5,6 +5,7 @@ $(document).ready(function (){
         success: function(data){
             $("#all").click(function(){
                 $("#banner").hide();
+                $("#app").append('<button class = "btn-primary" value = "Add New Design"></button>');
                 data.map(function(fash){
                     $("#app").append(` <div class = "allfashion">
                         <img class = "photo" src = "${fash.image}"/>
