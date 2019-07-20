@@ -1,0 +1,12 @@
+{
+    "category" : [
+        { 
+            "id" : 1,
+            "name" : "Skirt",
+            "type" : "Cloth",
+            "cost" : 5000,
+            "image" : "images/image1.jpeg",
+            "description" : "Describing all about the cloth"
+        }
+    ]
+}

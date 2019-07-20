@@ -1,0 +1,18 @@
+{
+  "name": "fashiondesign",
+  "version": "1.0.0",
+  "description": "Designing a fashion design CRUD functionality with HTML, AJAX, JSON and JQuery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fashion",
+    "design",
+    "cloths",
+    "shoes",
+    "accessories"
+  ],
+  "author": "Enugu Coders (Group A)",
+  "license": "ISC"
+}

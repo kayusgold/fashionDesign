@@ -1,0 +1,28 @@
+.logo{
+    font-style: italic;
+    font-family: "Lobster";
+}
+.logo1{
+    color:red;
+}
+#banner{
+    background-image: url("images/image1.jpeg");
+    width: 100%;
+    height: 500px;
+    color: white;
+    text-align: center;
+}
+#wel{
+    margin-top: 250px;
+    margin-left: 250px; 
+    margin-right: 250px;
+}
+#wel1{
+   
+    margin-left: 250px; 
+    margin-right: 250px;
+    margin-bottom: 250px;
+
+}
+
+
