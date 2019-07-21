@@ -1,21 +1,29 @@
-$(document).ready(function (){
+$(document).ready(function() {
+    $(".app").hide();
     $.ajax({
-        type : 'GET',
+        type: 'GET',
         url: 'http://localhost:3000/category',
-        success: function(data){
-            $("#all").click(function(){
+        success: function(data) {
+            $("#all").click(function() {
                 $("#banner").hide();
-                $("#app").append('<button class = "btn-primary" value = "Add New Design"></button>');
-                data.map(function(fash){
-                    $("#app").append(` <div class = "allfashion">
-                        <img class = "photo" src = "${fash.image}"/>
-                        <h1> ${fash.name} </h1>
-                    </div>`
-                
-            ).join("")
-        }) 
+
+                var inform = ''
+                data.map(function(fash) {
+                    return inform += `
+                    <div>
+                    <div>
+                      <img class = "photo" src ="${fash.image}" alt="our image"/>
+                      <h1>${fash.id} ${fash.name} </h1>
+                      <p>the cost is # ${fash.cost}</p>
+                      <p>${fash.description}</p>
+                      </div>
+                  </div>`
+                }).join("");
+                $(".app").show();
+                $(".app").append(inform);
+
             });
-            
+
         }
 
     })
