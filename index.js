@@ -14,8 +14,14 @@ $(document).ready(function() {
                     <div class = "fullApp">
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
+                        <p> Type : ${fash.type} </p>
                         <p>the cost is # ${fash.cost}</p>
                         <p>${fash.description}</p>
+                        <div class="btn btn-group btn-block" id="all">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
+                            <a href="#" class="btn btn-danger" id = "delete">Delete</a>
+                        </div>
+                        
                   </div>`
                 }).join("");
                 $(".appCon").show();
@@ -64,7 +70,7 @@ $(document).ready(function() {
     // });
     var myForm = document.getElementById('myForm');
 
-    myForm.onsubmit = function (evt) {
+    myForm.onsubmit = function(evt) {
         evt.preventDefault();
         var _this = this;
         var imageUploader = document.getElementById('imageUploader');
@@ -105,5 +111,32 @@ $(document).ready(function() {
         function OnError(response) {
             alert("An error was encountered");
         }
+
+    /////////////////////////////////////////////////////////////////////
+    ////////// UPDATING DESIGN DETAILS TO JSON FILE  /////////////////////
+    /////////////////////////////////////////////////////////////////////
+  
+    $("#update").click(function(idd){
+            
+        var idd = idd.id;    
+            $.ajax({    
+                type: "POST",    
+                contentType: "application/json; charset=utf-8",    
+                url: 'http://localhost:3000/category',
+                data: "{'id':'" + idd + "'}",    
+                dataType: "json",    
+                success: function (response) {    
+                   var info = response.split('`');  
+                   $('#name').val(info[1]);  
+                   $('#type').val(info[2]);  
+                   $('#cost').val(info[3]);  
+                   $('#description').val(info[4]);  
+                   $('#image').val(info[5]);  
+                   $('#id').val(idd);  
+
+                }, error: function (response) {   
+                }    
+            });    
+        })  
     };
 });
