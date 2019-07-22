@@ -25,15 +25,41 @@ $(document).ready(function() {
 
         }
     });
+
+    /////////////////////////////////////////////////////////////////////
+    ////////// POSTING DESIGN DETAILS TO JSON FILE  /////////////////////
+    /////////////////////////////////////////////////////////////////////
+
     $('#button').click(function() {
-        $.ajax({
-            type: 'POST',
-            URL: 'http://localhost:3000/category',
-            dataType: "JSON",
-            data: JSON.stringify({ "name": $("#name").val(), "type": $("#type").val(), "image": $("#image").val(), "description": $("#descript").val() }),
-            success: function(data, status) {
-                $(".app").append(inform);
-            }
-        });
+        let name = $("#name").val();
+        let type  = $("#type").val();
+        let cost = $("#cost").val();
+        let image = $("#image").val();
+        let des = $("#description").val();
+        var data = { name: name, type : type, cost : cost, image : image, description : des };    
+            var stringData = JSON.stringify(data);
+            console.log(stringData); 
+            $.ajax({    
+                type: "POST",    
+                url: "http://localhost:3000/category",    
+                data: stringData,    
+                contentType: "application/json; charset=utf-8",    
+                dataType: "json",    
+                success: OnSucces,    
+                error: OnError    
+            });     
+                function OnSucces(response) {    
+                    if (response == 1) {    
+                        alert('Category Added Successfully !!!');    
+                        reset();    
+                    }    
+                    else {    
+                        alert(response);    
+                    }    
+                }    
+                function OnError(response) {    
+                    alert(response);    
+                }
+    
     });
 })

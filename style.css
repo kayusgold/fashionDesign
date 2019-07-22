@@ -55,17 +55,11 @@
     background-attachment: scroll;
     height: 1000px;
 }
-/* .app {
-    width : 800px;
-    height: 500px;
-    margin : auto;
-}
-.des{
+
+#addDesign{
     float: right;
 }
-.imgDiv { 
-    float: left;
-} */
-/* .fullApp {
-    margin : 50px;
-} */
+.modal-title {
+    color : red;
+    text-align: center;
+}
