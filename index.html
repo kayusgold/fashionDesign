@@ -6,6 +6,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
     <link type="text/css" href="datatables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -26,18 +30,46 @@
             <h1 id="wel"> WELCOME TO FASHION HUB</h1>
             <h3 id="wel1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can make you look nice and sexy</h3>
         </div>
-        <div class="app">
-            <button class="btn-primary" id="float">add new design</button>
+        <div class="appCon">
+            <div>
+                <button class="btn-primary" id="float" data-toggle="modal" data-target="#myModal">Add New Design</button>
+            </div>
+            <div class = "app">
+
+            </div>
         </div>
-        <div>
-            <form action="">
-                <input type="text" name="name" placeholder="name" id="name">
-                <input type="text" name="type" placeholder="type" id="type">
-                <input type="text" name="image" placeholder="image url" id="image">
-                <input type="text" name="description" placeholder="description" id="descript">
-                <button id="button">POST</button>
-            </form>
-        </div>
+        <!-- <div>
+            
+        </div> -->
+        <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Modal Heading</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                            <form action="">
+                                    <input type="text" name="name" placeholder="name" id="name"> <br>
+                                    <input type="text" name="type" placeholder="type" id="type"><br>
+                                    <input type="text" name="image" placeholder="image url" id="image"><br>
+                                    <input type="text" name="description" placeholder="description" id="descript"><br>
+                                    <button id="button">POST</button>
+                                </form>
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>
     </div>
     <script src="datatables.min.js"></script>
     <script src="jquery-3.4.1.min"></script>

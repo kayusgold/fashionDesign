@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".app").hide();
+    $(".appCon").hide();
     $('#button').hide();
     $.ajax({
         type: 'GET',
@@ -11,16 +11,14 @@ $(document).ready(function() {
                 var inform = ''
                 data.map(function(fash) {
                     return inform += `
-                    <div>
-                    <div>
-                      <img class = "photo" src ="${fash.image}" alt="our image"/>
-                      <h1>${fash.id} ${fash.name} </h1>
-                      <p>the cost is # ${fash.cost}</p>
-                      <p>${fash.description}</p>
-                      </div>
+                    <div class = "fullApp">
+                        <img class = "photo" src ="${fash.image}" alt="our image"/>
+                        <h2 design-name> ${fash.name} </h2>
+                        <p>the cost is # ${fash.cost}</p>
+                        <p>${fash.description}</p>
                   </div>`
                 }).join("");
-                $(".app").show();
+                $(".appCon").show();
                 $(".app").append(inform);
 
             });

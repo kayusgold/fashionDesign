@@ -27,11 +27,45 @@
     margin-bottom: 250px;
 }
 
-#float {
+/* #float {
     float: right;
-}
+} */
 
 .photo {
-    width: 100%;
-    height: auto;
+    float: left;
+    width: 40%;
+    margin-right: 15px;
 }
+.design-name {
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0 0 1rem 0;
+  }
+  .fullApp {
+    max-width: 650px;
+    padding: 20px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+  }
+.appCon{
+    background-color: grey;
+    background-attachment: scroll;
+    height: 1000px;
+}
+/* .app {
+    width : 800px;
+    height: 500px;
+    margin : auto;
+}
+.des{
+    float: right;
+}
+.imgDiv { 
+    float: left;
+} */
+/* .fullApp {
+    margin : 50px;
+} */
