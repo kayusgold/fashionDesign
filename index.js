@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $(".app").hide();
+    $('#button').hide();
     $.ajax({
         type: 'GET',
         url: 'http://localhost:3000/category',
         success: function(data) {
             $("#all").click(function() {
                 $("#banner").hide();
-
+                $('#button').show();
                 var inform = ''
                 data.map(function(fash) {
                     return inform += `
@@ -25,9 +26,16 @@ $(document).ready(function() {
             });
 
         }
-
-    })
-
-
-
+    });
+    $('#button').click(function() {
+        $.ajax({
+            type: 'POST',
+            URL: 'http://localhost:3000/category',
+            dataType: "JSON",
+            data: JSON.stringify({ "name": $("#name").val(), "type": $("#type").val(), "image": $("#image").val(), "description": $("#descript").val() }),
+            success: function(data, status) {
+                $(".app").append(inform);
+            }
+        });
+    });
 })
