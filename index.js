@@ -46,6 +46,7 @@ $(document).ready(function() {
                         </div>
                         
                   </div>`}
+                  
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
@@ -69,6 +70,8 @@ $(document).ready(function() {
                         </div>
                         
                   </div>`}
+                 
+                  
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
@@ -93,7 +96,9 @@ $(document).ready(function() {
                         </div>
                         
                   </div>`}
+
                 }).join("");
+                
                 $(".appCon").show();
                 $(".app").html(inform);
 
@@ -212,20 +217,18 @@ $(document).ready(function() {
     ////////// DELETING DESIGN ID FROM JSON FILE  /////////////////////
     /////////////////////////////////////////////////////////////////////
     $.ajax({
-        type: 'DELETE',
+        type: 'GET',
         url: 'http://localhost:3000/category',
         data: stringD,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         error: OnError,
-        success: $("#").click(function(data){
-            alert('Are you sure you want to delete this category');
-            $("div#id").remove();
-            let arrData = data.entries();
-            for(let i= 0; i <arrData.length; i++)
-            arrData[i].splice(0,arrData.length);
-
+        success: $("#delete").click(function(event){ 
+            let id = event.target.id;
+            console.log(event);
+            console.log(id);
         })
+
     });
     
     
