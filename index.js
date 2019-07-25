@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $(".appCon").hide();
-    $('#button').hide();
+
     $.ajax({
         type: 'GET',
         url: 'http://localhost:3000/category',
@@ -31,9 +31,9 @@ $(document).ready(function() {
                 $("#banner").hide();
                 var inform = ''
                 data.map(function(fash) {
-                    if(fash.type === "Cloths"){
-                        
-                    return inform += `
+                    if (fash.type === "Cloths") {
+
+                        return inform += `
                     <div class = "fullApp">
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
@@ -45,8 +45,6 @@ $(document).ready(function() {
                             <a href="#" class="btn btn-danger" id = "delete">Delete</a>
                         </div>
                         
-                  </div>`}
-                  
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
@@ -56,8 +54,8 @@ $(document).ready(function() {
                 $("#banner").hide();
                 var inform = ''
                 data.map(function(fash) {
-                    if(fash.type === "Shoes"){
-                    return inform += `
+                    if (fash.type === "Shoes") {
+                        return inform += `
                     <div class = "fullApp">
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
@@ -69,9 +67,14 @@ $(document).ready(function() {
                             <a href="#" class="btn btn-danger" id = "delete">Delete</a>
                         </div>
                         
+
+                  </div>`
+                    }
+
                   </div>`}
                  
                   
+
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
@@ -82,8 +85,8 @@ $(document).ready(function() {
                 $("#banner").hide();
                 var inform = ''
                 data.map(function(fash) {
-                    if(fash.type === "Accessories"){
-                    return inform += `
+                    if (fash.type === "Accessories") {
+                        return inform += `
                     <div class = "fullApp">
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
@@ -95,7 +98,12 @@ $(document).ready(function() {
                             <a href="#" class="btn btn-danger" id = "delete">Delete</a>
                         </div>
                         
+
+                  </div>`
+                    }
+
                   </div>`}
+
 
                 }).join("");
                 
@@ -141,7 +149,7 @@ $(document).ready(function() {
     //             function OnError(response) {    
     //                 alert(response);    
     //             }
-    
+
     // });
     var myForm = document.getElementById('myForm');
 
@@ -153,7 +161,7 @@ $(document).ready(function() {
         var reader = new FileReader();
         reader.addEventListener(
             'load',
-            function () {
+            function() {
                 var dataArr = {};
 
                 for (var i = 0; i < _this.elements.length; i++) {
@@ -186,13 +194,13 @@ $(document).ready(function() {
         function OnError(response) {
             alert("An error was encountered");
         }
-   };
+    };
     /////////////////////////////////////////////////////////////////////
     ////////// UPDATING DESIGN DETAILS TO JSON FILE  /////////////////////
     /////////////////////////////////////////////////////////////////////
-  
+
     // $("#update").click(function(idd){
-            
+
     //     var idd = idd.id;    
     //         $.ajax({    
     //             type: "POST",    
@@ -223,13 +231,21 @@ $(document).ready(function() {
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         error: OnError,
+        success: $("#").click(function(data) {
+            alert('Are you sure you want to delete this category');
+            $("div#id").remove();
+            let arrData = data.entries();
+            for (let i = 0; i < arrData.length; i++)
+                arrData[i].splice(0, arrData.length);
+
         success: $("#delete").click(function(event){ 
             let id = event.target.id;
             console.log(event);
             console.log(id);
+
         })
 
     });
-    
-    
+
+
 });
