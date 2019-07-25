@@ -18,7 +18,7 @@ $(document).ready(function() {
                         <p>${fash.description}</p>
                         <div class="btn btn-group btn-block" id="all">
                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" class = "update" id = "${fash.id}">Update</a>
-                            <a href="#" class="btn btn-danger" class = "delete" id = "${fash.id}">Delete</a>
+                            <a href="#" class="btn btn-danger delete">Delete</a>
                         </div>
                         
                   </div>`
@@ -42,7 +42,7 @@ $(document).ready(function() {
                         <p>${fash.description}</p>
                         <div class="btn btn-group btn-block" id="all">
                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
-                            <a href="#" class="btn btn-danger" id = "delete">Delete</a>
+                            <a href="#" class="btn btn-danger delete">Delete</a>
                         </div>
                         
                   </div>`}
@@ -66,7 +66,7 @@ $(document).ready(function() {
                         <p>${fash.description}</p>
                         <div class="btn btn-group btn-block" id="all">
                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
-                            <a href="#" class="btn btn-danger" id = "delete">Delete</a>
+                            <a href="#" class="btn btn-danger delete">Delete</a>
                         </div>
                         
                   </div>`}
@@ -92,7 +92,7 @@ $(document).ready(function() {
                         <p>${fash.description}</p>
                         <div class="btn btn-group btn-block" id="all">
                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
-                            <a href="#" class="btn btn-danger" id = "delete">Delete</a>
+                            <a href="#" class="btn btn-danger delete">Delete</a>
                         </div>
                         
                   </div>`}
@@ -101,6 +101,20 @@ $(document).ready(function() {
                 
                 $(".appCon").show();
                 $(".app").html(inform);
+
+                // delete event
+                $(".delete").click(function(event){
+                    let id = event.target.id;
+                    for(let i = 0; i < data.length; i++){
+                        console.log(data[i]);
+                        if(data[i] == id){
+                            console.log("aye");
+                            data.splice(0,data[i].length);
+                        }
+                        break;
+
+                    }
+                })
 
             });
 
@@ -216,20 +230,7 @@ $(document).ready(function() {
     /////////////////////////////////////////////////////////////////////
     ////////// DELETING DESIGN ID FROM JSON FILE  /////////////////////
     /////////////////////////////////////////////////////////////////////
-    $.ajax({
-        type: 'GET',
-        url: 'http://localhost:3000/category',
-        data: stringD,
-        contentType: 'application/json; charset=utf-8',
-        dataType: 'json',
-        error: OnError,
-        success: $("#delete").click(function(event){ 
-            let id = event.target.id;
-            console.log(event);
-            console.log(id);
-        })
-
-    });
+    
     
     
 });
