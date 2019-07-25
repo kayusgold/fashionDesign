@@ -45,8 +45,13 @@ $(document).ready(function() {
                             <a href="#" class="btn btn-danger" id = "delete">Delete</a>
                         </div>
                         
+<<<<<<< HEAD
                   </div>`
                     }
+=======
+                  </div>`}
+                  
+>>>>>>> 82c4788375bf411f1c7f383d0615696dd3e8dcfb
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
@@ -69,8 +74,14 @@ $(document).ready(function() {
                             <a href="#" class="btn btn-danger" id = "delete">Delete</a>
                         </div>
                         
+<<<<<<< HEAD
                   </div>`
                     }
+=======
+                  </div>`}
+                 
+                  
+>>>>>>> 82c4788375bf411f1c7f383d0615696dd3e8dcfb
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
@@ -94,9 +105,15 @@ $(document).ready(function() {
                             <a href="#" class="btn btn-danger" id = "delete">Delete</a>
                         </div>
                         
+<<<<<<< HEAD
                   </div>`
                     }
+=======
+                  </div>`}
+
+>>>>>>> 82c4788375bf411f1c7f383d0615696dd3e8dcfb
                 }).join("");
+                
                 $(".appCon").show();
                 $(".app").html(inform);
 
@@ -215,12 +232,13 @@ $(document).ready(function() {
     ////////// DELETING DESIGN ID FROM JSON FILE  /////////////////////
     /////////////////////////////////////////////////////////////////////
     $.ajax({
-        type: 'DELETE',
+        type: 'GET',
         url: 'http://localhost:3000/category',
         data: stringD,
         contentType: 'application/json; charset=utf-8',
         dataType: 'json',
         error: OnError,
+<<<<<<< HEAD
         success: $("#").click(function(data) {
             alert('Are you sure you want to delete this category');
             $("div#id").remove();
@@ -228,7 +246,14 @@ $(document).ready(function() {
             for (let i = 0; i < arrData.length; i++)
                 arrData[i].splice(0, arrData.length);
 
+=======
+        success: $("#delete").click(function(event){ 
+            let id = event.target.id;
+            console.log(event);
+            console.log(id);
+>>>>>>> 82c4788375bf411f1c7f383d0615696dd3e8dcfb
         })
+
     });
 
 
