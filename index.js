@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $(".appCon").hide();
-    $('#button').hide();
+
     $.ajax({
         type: 'GET',
         url: 'http://localhost:3000/category',
@@ -31,22 +31,21 @@ $(document).ready(function() {
                 $("#banner").hide();
                 var inform = ''
                 data.map(function(fash) {
-                    if(fash.type === "Cloths"){
-                        
-                    return inform += `
-                    <div class = "fullApp">
+                    if (fash.type === "Cloths") {
+                        return inform += `
+                        <div class = "fullApp" >
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
                         <p> Type : ${fash.type} </p>
                         <p>Cost : #${fash.cost}</p>
                         <p>${fash.description}</p>
                         <div class="btn btn-group btn-block" id="all">
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" class = "update" id = "${fash.id}">Update</a>
                             <a href="#" class="btn btn-danger delete">Delete</a>
                         </div>
                         
-                  </div>`}
-                  
+                  </div>`
+                    }
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
@@ -56,34 +55,32 @@ $(document).ready(function() {
                 $("#banner").hide();
                 var inform = ''
                 data.map(function(fash) {
-                    if(fash.type === "Shoes"){
-                    return inform += `
-                    <div class = "fullApp">
+                    if (fash.type === "Shoes") {
+                        return inform += `
+                        <div class = "fullApp" >
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
                         <p> Type : ${fash.type} </p>
                         <p>Cost : #${fash.cost}</p>
                         <p>${fash.description}</p>
                         <div class="btn btn-group btn-block" id="all">
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" class = "update" id = "${fash.id}">Update</a>
                             <a href="#" class="btn btn-danger delete">Delete</a>
                         </div>
                         
                   </div>`}
-                 
-                  
+                        
                 }).join("");
                 $(".appCon").show();
                 $(".app").html(inform);
 
             });
-
             $("#accessories").click(function() {
                 $("#banner").hide();
                 var inform = ''
                 data.map(function(fash) {
-                    if(fash.type === "Accessories"){
-                    return inform += `
+                    if (fash.type === "Accessories") {
+                        return inform += `
                     <div class = "fullApp">
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
@@ -95,7 +92,11 @@ $(document).ready(function() {
                             <a href="#" class="btn btn-danger delete">Delete</a>
                         </div>
                         
-                  </div>`}
+
+                  </div>`
+                    }
+
+
 
                 }).join("");
                 
@@ -155,7 +156,7 @@ $(document).ready(function() {
     //             function OnError(response) {    
     //                 alert(response);    
     //             }
-    
+
     // });
     var myForm = document.getElementById('myForm');
 
@@ -167,7 +168,7 @@ $(document).ready(function() {
         var reader = new FileReader();
         reader.addEventListener(
             'load',
-            function () {
+            function() {
                 var dataArr = {};
 
                 for (var i = 0; i < _this.elements.length; i++) {
@@ -200,13 +201,13 @@ $(document).ready(function() {
         function OnError(response) {
             alert("An error was encountered");
         }
-   };
+    };
     /////////////////////////////////////////////////////////////////////
     ////////// UPDATING DESIGN DETAILS TO JSON FILE  /////////////////////
     /////////////////////////////////////////////////////////////////////
-  
+
     // $("#update").click(function(idd){
-            
+
     //     var idd = idd.id;    
     //         $.ajax({    
     //             type: "POST",    
@@ -230,7 +231,6 @@ $(document).ready(function() {
     /////////////////////////////////////////////////////////////////////
     ////////// DELETING DESIGN ID FROM JSON FILE  /////////////////////
     /////////////////////////////////////////////////////////////////////
-    
-    
-    
+   
+
 });
