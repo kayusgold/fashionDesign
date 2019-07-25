@@ -1,13 +1,13 @@
 $(document).ready(function() {
     $(".appCon").hide();
-    $('#button').hide();
+
     $.ajax({
         type: 'GET',
         url: 'http://localhost:3000/category',
         success: function(data) {
             $("#all").click(function() {
                 $("#banner").hide();
-                $('#button').show();
+
                 var inform = ''
                 data.map(function(fash) {
                     return inform += `
@@ -66,7 +66,7 @@ $(document).ready(function() {
     //             function OnError(response) {    
     //                 alert(response);    
     //             }
-    
+
     // });
     var myForm = document.getElementById('myForm');
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
         var reader = new FileReader();
         reader.addEventListener(
             'load',
-            function () {
+            function() {
                 var dataArr = {};
 
                 for (var i = 0; i < _this.elements.length; i++) {
@@ -112,31 +112,31 @@ $(document).ready(function() {
             alert("An error was encountered");
         }
 
-    /////////////////////////////////////////////////////////////////////
-    ////////// UPDATING DESIGN DETAILS TO JSON FILE  /////////////////////
-    /////////////////////////////////////////////////////////////////////
-  
-    $("#update").click(function(idd){
-            
-        var idd = idd.id;    
-            $.ajax({    
-                type: "POST",    
-                contentType: "application/json; charset=utf-8",    
-                url: 'http://localhost:3000/category',
-                data: "{'id':'" + idd + "'}",    
-                dataType: "json",    
-                success: function (response) {    
-                   var info = response.split('`');  
-                   $('#name').val(info[1]);  
-                   $('#type').val(info[2]);  
-                   $('#cost').val(info[3]);  
-                   $('#description').val(info[4]);  
-                   $('#image').val(info[5]);  
-                   $('#id').val(idd);  
+        /////////////////////////////////////////////////////////////////////
+        ////////// UPDATING DESIGN DETAILS TO JSON FILE  /////////////////////
+        /////////////////////////////////////////////////////////////////////
 
-                }, error: function (response) {   
-                }    
-            });    
-        })  
+        // $("#update").click(function(idd) {
+
+        //     var idd = idd.id;
+        //     $.ajax({
+        //         type: "POST",
+        //         contentType: "application/json; charset=utf-8",
+        //         url: 'http://localhost:3000/category',
+        //         data: "{'id':'" + idd + "'}",
+        //         dataType: "json",
+        //         success: function(response) {
+        //             var info = response.split('`');
+        //             $('#name').val(info[1]);
+        //             $('#type').val(info[2]);
+        //             $('#cost').val(info[3]);
+        //             $('#description').val(info[4]);
+        //             $('#image').val(info[5]);
+        //             $('#id').val(idd);
+
+        //         },
+        //         error: function(response) {}
+        //     });
+        // })
     };
 });
