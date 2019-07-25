@@ -1,6 +1,7 @@
 .logo {
     font-style: italic;
-    font-family: "Lobster";
+    font-family: "Indie Flower";
+    color: black;
 }
 
 .logo1 {
@@ -8,23 +9,16 @@
 }
 
 #banner {
-    background-image: url("images/image1.jpeg");
+    background-image: url("images/bg_3.jpg");
     width: 100%;
     height: auto;
     color: white;
     text-align: center;
 }
 
-#wel {
-    margin-top: 250px;
-    margin-left: 250px;
-    margin-right: 250px;
-}
-
-#wel1 {
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-bottom: 250px;
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -52,19 +46,29 @@
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
 }
 
-.appCon {
-    background-color: grey;
-    background-attachment: scroll;
-    height: 95%;
-    overflow: scroll;
-    overflow-x: hidden;
-}
 
+}
+.appCon {
+    background-color: WhiteSmoke;
+    background-attachment: scroll;
+    height: 100%;
+}
 #addDesign {
     float: right;
 }
-
 .modal-title {
     color: red;
     text-align: center;
+}
+#header {
+    position: fixed;
+}
+.footer {
+    font-size: 1rem;
+    color: #000;
+    text-align: center;
+    margin: 0;
+    padding: 2em;
+    width: 100%;
+    height: 50px;
 }

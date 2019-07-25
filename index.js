@@ -7,15 +7,38 @@ $(document).ready(function() {
         success: function(data) {
             $("#all").click(function() {
                 $("#banner").hide();
-
                 var inform = ''
                 data.map(function(fash) {
                     return inform += `
+                    <div class = "fullApp" >
+                        <img class = "photo" src ="${fash.image}" alt="our image"/>
+                        <h2 design-name> ${fash.name} </h2>
+                        <p> Type : ${fash.type} </p>
+                        <p>Cost : #${fash.cost}</p>
+                        <p>${fash.description}</p>
+                        <div class="btn btn-group btn-block" id="all">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" class = "update" id = "${fash.id}">Update</a>
+                            <a href="#" class="btn btn-danger" class = "delete" id = "${fash.id}">Delete</a>
+                        </div>
+                        
+                  </div>`
+                }).join("");
+                $(".appCon").show();
+                $(".app").html(inform);
+
+            });
+            $("#cloth").click(function() {
+                $("#banner").hide();
+                var inform = ''
+                data.map(function(fash) {
+                    if (fash.type === "Cloths") {
+
+                        return inform += `
                     <div class = "fullApp">
                         <img class = "photo" src ="${fash.image}" alt="our image"/>
                         <h2 design-name> ${fash.name} </h2>
                         <p> Type : ${fash.type} </p>
-                        <p>the cost is # ${fash.cost}</p>
+                        <p>Cost : #${fash.cost}</p>
                         <p>${fash.description}</p>
                         <div class="btn btn-group btn-block" id="all">
                             <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
@@ -23,9 +46,59 @@ $(document).ready(function() {
                         </div>
                         
                   </div>`
+                    }
                 }).join("");
                 $(".appCon").show();
-                $(".app").append(inform);
+                $(".app").html(inform);
+
+            });
+            $("#shoe").click(function() {
+                $("#banner").hide();
+                var inform = ''
+                data.map(function(fash) {
+                    if (fash.type === "Shoes") {
+                        return inform += `
+                    <div class = "fullApp">
+                        <img class = "photo" src ="${fash.image}" alt="our image"/>
+                        <h2 design-name> ${fash.name} </h2>
+                        <p> Type : ${fash.type} </p>
+                        <p>Cost : #${fash.cost}</p>
+                        <p>${fash.description}</p>
+                        <div class="btn btn-group btn-block" id="all">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
+                            <a href="#" class="btn btn-danger" id = "delete">Delete</a>
+                        </div>
+                        
+                  </div>`
+                    }
+                }).join("");
+                $(".appCon").show();
+                $(".app").html(inform);
+
+            });
+
+            $("#accessories").click(function() {
+                $("#banner").hide();
+                var inform = ''
+                data.map(function(fash) {
+                    if (fash.type === "Accessories") {
+                        return inform += `
+                    <div class = "fullApp">
+                        <img class = "photo" src ="${fash.image}" alt="our image"/>
+                        <h2 design-name> ${fash.name} </h2>
+                        <p> Type : ${fash.type} </p>
+                        <p>Cost : #${fash.cost}</p>
+                        <p>${fash.description}</p>
+                        <div class="btn btn-group btn-block" id="all">
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id = "update">Update</a>
+                            <a href="#" class="btn btn-danger" id = "delete">Delete</a>
+                        </div>
+                        
+                  </div>`
+                    }
+                }).join("");
+                $(".appCon").show();
+                $(".app").html(inform);
 
             });
 
@@ -87,7 +160,7 @@ $(document).ready(function() {
                 }
                 dataArr['image'] = reader.result;
 
-                var stringD = JSON.stringify(dataArr);
+                let stringD = JSON.stringify(dataArr);
 
                 $.ajax({
                     type: 'POST',
@@ -111,32 +184,52 @@ $(document).ready(function() {
         function OnError(response) {
             alert("An error was encountered");
         }
-
-        /////////////////////////////////////////////////////////////////////
-        ////////// UPDATING DESIGN DETAILS TO JSON FILE  /////////////////////
-        /////////////////////////////////////////////////////////////////////
-
-        // $("#update").click(function(idd) {
-
-        //     var idd = idd.id;
-        //     $.ajax({
-        //         type: "POST",
-        //         contentType: "application/json; charset=utf-8",
-        //         url: 'http://localhost:3000/category',
-        //         data: "{'id':'" + idd + "'}",
-        //         dataType: "json",
-        //         success: function(response) {
-        //             var info = response.split('`');
-        //             $('#name').val(info[1]);
-        //             $('#type').val(info[2]);
-        //             $('#cost').val(info[3]);
-        //             $('#description').val(info[4]);
-        //             $('#image').val(info[5]);
-        //             $('#id').val(idd);
-
-        //         },
-        //         error: function(response) {}
-        //     });
-        // })
     };
+    /////////////////////////////////////////////////////////////////////
+    ////////// UPDATING DESIGN DETAILS TO JSON FILE  /////////////////////
+    /////////////////////////////////////////////////////////////////////
+
+    // $("#update").click(function(idd){
+
+    //     var idd = idd.id;    
+    //         $.ajax({    
+    //             type: "POST",    
+    //             contentType: "application/json; charset=utf-8",    
+    //             url: 'http://localhost:3000/category',
+    //             data: "{'id':'" + idd + "'}",    
+    //             dataType: "json",    
+    //             success: function (response) {    
+    //                var info = response.split('`');  
+    //                $('#name').val(info[1]);  
+    //                $('#type').val(info[2]);  
+    //                $('#cost').val(info[3]);  
+    //                $('#description').val(info[4]);  
+    //                $('#image').val(info[5]);  
+    //                $('#id').val(idd);  
+
+    //             }, error: function (response) {   
+    //             }    
+    //         });    
+    //     })
+    /////////////////////////////////////////////////////////////////////
+    ////////// DELETING DESIGN ID FROM JSON FILE  /////////////////////
+    /////////////////////////////////////////////////////////////////////
+    $.ajax({
+        type: 'DELETE',
+        url: 'http://localhost:3000/category',
+        data: stringD,
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        error: OnError,
+        success: $("#").click(function(data) {
+            alert('Are you sure you want to delete this category');
+            $("div#id").remove();
+            let arrData = data.entries();
+            for (let i = 0; i < arrData.length; i++)
+                arrData[i].splice(0, arrData.length);
+
+        })
+    });
+
+
 });

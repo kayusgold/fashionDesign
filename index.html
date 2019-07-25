@@ -7,28 +7,64 @@
     <link type="text/css" href="bootstrap.min.css" rel="stylesheet" />
     <link type="text/css" href="datatables.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <h1 class="logo"> Fashion<span class="logo1">Hub</span></h1>
+            <a href="index.html">
+                <h1 class="logo"> Fashion<span class="logo1">Hub</span></h1>
+            </a>
         </div>
         <div class="row">
-            <div class="btn btn-group btn-block" id="all">
-                <a href="#" class="btn btn-default">ALL FASHION</a>
-                <a href="#" class="btn btn-default">CLOTH</a>
-                <a href="#" class="btn btn-default">SHOES</a>
-                <a href="#" class="btn btn-default">ACCESSORIES</a>
+            <div class="btn btn-group btn-block">
+                <a href="#" class="btn btn-default" id="all">ALL FASHION</a>
+                <a href="#" class="btn btn-default" id="cloth">CLOTH</a>
+                <a href="#" class="btn btn-default" id="shoe">SHOES</a>
+                <a href="#" class="btn btn-default" id="accessories">ACCESSORIES</a>
             </div>
         </div>
 
         <div class="row" id="banner">
-            <h1 id="wel"> WELCOME TO FASHION HUB</h1>
-            <h3 id="wel1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can make you look nice and sexy</h3>
+            <!-- <h1 id="wel">WELCOME TO FASHION HUB</h1>
+            <h3 id="wel1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We can make you look nice and sexy</h3> -->
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/bg_1.jpg" alt="Fashiion Design Picture" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>WELCOME TO FASHION HUB</h3>
+                            <p>We can make you look nice and sexy</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/bg_2.jpg" alt="Fashiion Design Picture" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>WELCOME TO FASHION HUB</h3>
+                            <p>Thank you for Visiting!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/bg_3.jpg" alt="Fashiion Design Picture" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>WELCOME TO FASHION HUB</h3>
+                            <p>We solve all your problems on Desgin!</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
         </div>
         <div class="appCon">
             <div>
@@ -66,11 +102,16 @@
 
                 </div>
             </div>
+            <div class="footer">
+                <p>All right Reserved. Check back soon for updates.</p>
+            </div>
         </div>
-    </div>
-    <script src="datatables.min.js"></script>
-    <script src="jquery-3.4.1.min"></script>
-    <script src="index.js"></script>
+        <script src="datatables.min.js"></script>
+        <script src="jquery-3.4.1.min"></script>
+        <script src="index.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
