@@ -90,18 +90,22 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form action="/process" id="myForm">
-                            Name : <input type="text" name="name" placeholder="name" id="name" class="form-control"> <br> Type :<select class="form-control" id="type" name="type">
+                           <label>Name :</label>  <input type="text" name="name" placeholder="name" id="name" class="form-control" required> <br> 
+                           <label>Type :</label><select class="form-control" id="type" name="type" required>
                                             <option>Cloths</option>
                                             <option>Shoes</option>
                                             <option>Accessories</option>
-                                        </select><br> Cost : <input type="number" name="cost" placeholder="0000" id="cost" class="form-control"><br> Photo : <input type="file" name="imageUploader" id="imageUploader" class="form-control"><br> Description:
-                            <textarea class="form-control" rows="3" id="description" name="description"></textarea><br>
+                                        </select><br> 
+                             <label>Cost :</label><input type="number" name="cost" placeholder="0.00" id="cost" class="form-control" required><br> 
+                             <label>Photo :</label> <input type="file" name="imageUploader" id="imageUploader" class="form-control" required><br> 
+                            <label>Description:</label><textarea class="form-control" rows="3" id="description" name="description" required></textarea><br>
                             <button type="submit" id="addDesign" class="btn btn-primary btn-block"> Submit </button>
                         </form>
                     </div>
 
                 </div>
             </div>
+        </div>
             <div class="footer">
                 <p>All right Reserved. Check back soon for updates.</p>
             </div>
